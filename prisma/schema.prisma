@@ -44,10 +44,11 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
+  passwordHash  String?   // 👈 добавляем для CredentialsProvider
   accounts      Account[]
   sessions      Session[]
-
   posts         Post[]
+
   @@map(name: "users")
 }
 
